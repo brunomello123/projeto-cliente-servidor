@@ -2,28 +2,31 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import jpIMG from "../../assets/jp.svg";
+import utfprIMG from "../../assets/UtfprLogo.svg";
+
 import { LayoutComponents } from "../../components/LayoutComponents";
 
 export const Login = () => {
-  const [email, setEmail] = useState("");
+  const [cpf, setCpf] = useState("");
   const [password, setPassword] = useState("");
   return (
     <LayoutComponents>
       <form className="login-form">
-        <span className="login-form-title"> Bem vindo </span>
-
+      
         <span className="login-form-title">
-          <img src={jpIMG} alt="Jovem Programador" />
+          <img src={utfprIMG} alt="Jovem Programador" />
         </span>
+
+        <span className="login-form-title"> Bem vindo </span>
 
         <div className="wrap-input">
           <input
-            className={email !== "" ? "has-val input" : "input"}
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            className={cpf !== "" ? "has-val input" : "input"}
+            type="cpf"
+            value={cpf}
+            onChange={(e) => setCpf(e.target.value)}
           />
-          <span className="focus-input" data-placeholder="Email"></span>
+          <span className="focus-input" data-placeholder="Cpf"></span>
         </div>
 
         <div className="wrap-input">
@@ -33,7 +36,7 @@ export const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <span className="focus-input" data-placeholder="Password"></span>
+          <span className="focus-input" data-placeholder="Senha"></span>
         </div>
 
         <div className="container-login-form-btn">
